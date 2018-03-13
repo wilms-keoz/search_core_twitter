@@ -17,8 +17,8 @@
     },
     "require": {
         "php": ">=7.0.0",
-        "typo3/cms": "~8.7",
-        "codappix/search_core": "~1.0",
+        "typo3/cms": ">= 7.6 < 9.0",
+        "codappix/search_core": ">=0.0.1",
         "j7mbo/twitter-api-php": "~1.0"
     },
     "require-dev": {
