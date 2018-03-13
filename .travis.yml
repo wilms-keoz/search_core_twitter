@@ -1,0 +1,45 @@
+sudo: true
+
+before_install:
+  - mysql -u root -e 'GRANT ALL ON `typo3_ci_ft%`.* TO travis@127.0.0.1;'
+
+language: php
+
+php:
+  - 7.0
+  - 7.1
+  - 7.2
+
+env:
+  global:
+    - TYPO3_DATABASE_NAME="typo3_ci"
+    - TYPO3_DATABASE_HOST="127.0.0.1"
+    - TYPO3_DATABASE_USERNAME="travis"
+    - TYPO3_DATABASE_PASSWORD=""
+    - typo3DatabaseName="typo3_ci"
+    - typo3DatabaseHost="127.0.0.1"
+    - typo3DatabaseUsername="travis"
+    - typo3DatabasePassword=""
+  matrix:
+    - TYPO3_VERSION="~7.6"
+
+matrix:
+  fast_finish: true
+
+services:
+  - mysql
+
+install: make install
+
+script:
+  - make cgl
+  - make unitTests
+  - make functionalTests
+
+after_script:
+  - make uploadCodeCoverage
+  - make clean
+
+cache:
+  directories:
+    - $HOME/.composer/cache
