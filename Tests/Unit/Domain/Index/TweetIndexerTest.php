@@ -47,7 +47,9 @@ class TweetIndexerTest extends AbstractUnitTestCase
     {
         $this->connectionMock = $this->getMockBuilder(ConnectionInterface::class)->getMock();
         $this->configurationMock = $this->getMockBuilder(ConfigurationContainerInterface::class)->getMock();
-        $this->indexServiceMock = $this->getMockBuilder(IndexServiceInterface::class)->disableOriginalConstructor()->getMock();
+        $this->indexServiceMock = $this->getMockBuilder(IndexServiceInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
 
         $this->subject = new TweetIndexer(
             $this->connectionMock,
