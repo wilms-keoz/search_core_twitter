@@ -18,7 +18,7 @@
     "require": {
         "php": ">=7.0.0",
         "typo3/cms": ">= 7.6 < 9.0",
-        "codappix/search_core": "dev-feature/support-typo3-7-to-8 as 0.0.x-dev",
+        "codappix/search_core": "~0.0.1",
         "j7mbo/twitter-api-php": "~1.0"
     },
     "require-dev": {
