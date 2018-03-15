@@ -25,7 +25,8 @@ use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface;
 
 /**
- *
+ * Concrete implementation to index twitter information
+ * via "j7mbo/twitter-api-php".
  */
 class IndexService implements IndexServiceInterface
 {

@@ -20,7 +20,10 @@ namespace Codappix\SearchCoreTwitter\Domain\Index;
  * 02110-1301, USA.
  */
 
-class TwitterIndexerInterface
+/**
+ * Hold some information which should be defined at a single place.
+ */
+interface TwitterIndexerInterface
 {
     const API_BASE_URL = 'https://api.twitter.com/1.1/';
 

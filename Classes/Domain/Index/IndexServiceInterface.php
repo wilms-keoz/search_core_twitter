@@ -20,6 +20,11 @@ namespace Codappix\SearchCoreTwitter\Domain\Index;
  * 02110-1301, USA.
  */
 
+/**
+ * Used to abstract concrete twitter API integration from indexer.
+ *
+ * Implement this and configure DI to use a different integration.
+ */
 interface IndexServiceInterface
 {
     /**

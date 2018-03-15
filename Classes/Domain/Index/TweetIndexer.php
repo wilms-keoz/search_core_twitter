@@ -23,7 +23,7 @@ namespace Codappix\SearchCoreTwitter\Domain\Index;
 use Codappix\SearchCore\Domain\Index\AbstractIndexer;
 
 /**
- *
+ * Indexer for search_core to integrate Twitter indexing.
  */
 class TweetIndexer extends AbstractIndexer
 {
