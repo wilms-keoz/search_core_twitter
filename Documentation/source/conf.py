@@ -239,7 +239,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'TYPO3Extensionsearch_core_twitter.tex', u'TYPO3 Extension search\\_core Documentation',
+    (master_doc, 'TYPO3Extensionsearch_core_twitter.tex', u'TYPO3 Extension search\\_core_twitter Documentation',
      u'Daniel Siepmann', 'manual'),
 ]
 

@@ -14,7 +14,7 @@ The extension can be installed through composer::
 Download
 --------
 
-You can also `download`_ the extension and placing it inside the :file:`typo3conf/ext`-Folder of
+You can also `download`_ the extension and place it inside the :file:`typo3conf/ext`-Folder of
 your installation.  In that case you need to install all dependencies yourself. Dependencies are:
 
 .. literalinclude:: ../../composer.json
