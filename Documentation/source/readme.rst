@@ -1,9 +1,6 @@
 TYPO3 Extension search_core_twitter
 ===================================
 
-Introduction
-============
-
 What does it do?
 ----------------
 
