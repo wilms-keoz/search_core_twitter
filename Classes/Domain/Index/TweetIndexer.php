@@ -74,7 +74,7 @@ class TweetIndexer extends AbstractIndexer
 
     protected function getDocumentName() : string
     {
-        return $this->configuration->get('indexing.' . $this->identifier . '.twitterAccount') . 'Tweets';
+        return $this->identifier;
     }
 
     /**
