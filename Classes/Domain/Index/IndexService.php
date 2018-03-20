@@ -55,7 +55,7 @@ class IndexService implements IndexServiceInterface
         $cacheIdentifier = sha1($endpoint . $twitterAccountIdentifier . implode($parameters));
         if (($records = $this->cache->get($cacheIdentifier)) === false) {
             $records = $this->getTwitterapiExchangeInstance($twitterAccountIdentifier)
-                ->setGetfield('?' . implode('&', $parameters))
+                ->setGetfield('?' . http_build_query($parameters))
                 ->buildOauth($this->getUrlWithEndpoint($endpoint), TwitterIndexerInterface::REQUEST_METHOD_GET)
                 ->performRequest();
 
