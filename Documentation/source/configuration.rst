@@ -24,7 +24,7 @@ A small example for a full setup::
        indexing {
            tweetsFromPress {
                indexer = Codappix\SearchCoreTwitter\Domain\Index\TweetIndexer
-               twitterAccount = pressAccount
+               account = pressAccount
                parameters {
                    screen_name = company-press
                }
@@ -66,20 +66,20 @@ The following indexers are added:
 
    Indexer/TweetIndexer
 
-.. _configuration_twitterAccount:
+.. _configuration_account:
 
 Twitter Account
 ---------------
 
 As multiple twitter connections are possible, you have to configure the connection to use for each
-index definition. This is done using the ``twitterAccount`` option, which has to match the
+index definition. This is done using the ``account`` option, which has to match the
 ``<identifier>`` of a twitter connection.
 
 .. code-block:: typoscript
 
    plugin.tx_searchcore.settings.indexing {
        tweetsFromPress {
-           twitterAccount = pressAccount
+           account = pressAccount
        }
    }
 

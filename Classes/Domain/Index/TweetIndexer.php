@@ -59,7 +59,7 @@ class TweetIndexer extends AbstractIndexer
 
         return $this->indexService->getResult(
             $this->getEndpoint(),
-            $this->configuration->get('indexing.' . $this->identifier . '.twitterAccount'),
+            $this->configuration->get('indexing.' . $this->identifier . '.account'),
             $parameters
         );
     }

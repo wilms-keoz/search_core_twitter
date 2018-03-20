@@ -14,7 +14,7 @@ Example::
    plugin.tx_searchcore.settings.indexing {
        tweetsFromPress {
            indexer = Codappix\SearchCoreTwitter\Domain\Index\TweetIndexer
-           twitterAccount = pressAccount
+           account = pressAccount
            parameters {
                screen_name = company-press
            }

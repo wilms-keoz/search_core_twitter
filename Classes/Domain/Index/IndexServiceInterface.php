@@ -31,8 +31,8 @@ interface IndexServiceInterface
      * Fetch result from twitter and return as array.
      *
      * The result has to be fetched for the given endpoint, indicating which information to fetch.
-     * The twitterAccountIdentifier defines the configured account to use, from typoscript.
+     * The accountIdentifier defines the configured account to use, from typoscript.
      * Parameters should be passed, they should only contain parameters from twitter documentation.
      */
-    public function getResult(string $endpoint, string $twitterAccountIdentifier, array $parameters): array;
+    public function getResult(string $endpoint, string $accountIdentifier, array $parameters) : array;
 }

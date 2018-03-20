@@ -71,7 +71,7 @@ class TweetIndexerTest extends AbstractUnitTestCase
                 if ($path === 'indexing.identifier.parameters') {
                     return [];
                 }
-                if ($path === 'indexing.identifier.twitterAccount') {
+                if ($path === 'indexing.identifier.account') {
                     return 'configuredTwitterAccount';
                 }
             }));

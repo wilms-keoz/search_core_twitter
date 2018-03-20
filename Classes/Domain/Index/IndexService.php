@@ -46,15 +46,15 @@ class IndexService implements IndexServiceInterface
         $this->configuration = $configuration;
     }
 
-    public function getResult(string $endpoint, string $twitterAccountIdentifier, array $parameters) : array
+    public function getResult(string $endpoint, string $accountIdentifier, array $parameters) : array
     {
         if (isset($parameters['count']) && $parameters['count'] > TwitterIndexerInterface::MAX_TWEET_COUNT) {
             $parameters['count'] = TwitterIndexerInterface::MAX_TWEET_COUNT;
         }
 
-        $cacheIdentifier = sha1($endpoint . $twitterAccountIdentifier . implode($parameters));
+        $cacheIdentifier = sha1($endpoint . $accountIdentifier . implode($parameters));
         if (($records = $this->cache->get($cacheIdentifier)) === false) {
-            $records = $this->getTwitterapiExchangeInstance($twitterAccountIdentifier)
+            $records = $this->getTwitterapiExchangeInstance($accountIdentifier)
                 ->setGetfield('?' . http_build_query($parameters))
                 ->buildOauth($this->getUrlWithEndpoint($endpoint), TwitterIndexerInterface::REQUEST_METHOD_GET)
                 ->performRequest();
@@ -65,10 +65,10 @@ class IndexService implements IndexServiceInterface
         return json_decode($records, true);
     }
 
-    protected function getTwitterapiExchangeInstance(string $twitterAccountIdentifier) : \TwitterAPIExchange
+    protected function getTwitterapiExchangeInstance(string $accountIdentifier) : \TwitterAPIExchange
     {
         return new \TwitterAPIExchange(
-            $this->configuration->get('connections.twitter.' . $twitterAccountIdentifier)
+            $this->configuration->get('connections.twitter.' . $accountIdentifier)
         );
     }
 
