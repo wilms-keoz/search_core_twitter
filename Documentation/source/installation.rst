@@ -9,7 +9,7 @@ Composer
 
 The extension can be installed through composer::
 
-    composer require "codappix/search_core_twitter" "~0.0.1"
+    composer require "codappix/search_core_twitter" "~0.0.2"
 
 Download
 --------
