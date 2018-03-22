@@ -79,14 +79,20 @@ class TweetIndexer extends AbstractIndexer
 
     /**
      * @throws InvalidArgumentException
+     * @thows \Exception
      */
     protected function prepareRecord(array &$record)
     {
-        parent::prepareRecord($record);
-
         if (!isset($record['id_str'])) {
             throw new \InvalidArgumentException('No "id_str" available for tweet.', 1520933234);
         }
+
+        if (isset($record['created_at'])) {
+            $record['created_at'] = (new \DateTime($record['created_at']))
+                ->format(\DateTime::ISO8601);
+        }
+
+        parent::prepareRecord($record);
 
         $record['search_identifier'] = $record['id_str'];
     }
